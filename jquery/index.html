@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Twitch SPA</title>
+		<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/css/bootstrap.css">
+		<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+		<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	</head>
+	<body>
+		<div class="open-btn">Games</div>
+		<header>
+			<ul class="games container"></ul>
+			<div class="close-btn">
+				<img src="assets/icons/remove.svg" width="20px" height="20px">
+			</div>
+		</header>
+		<section id="video-container">
+			<div class="video-wrapper"><div>
+		</section>
+		<section class="container-fluid streams"></section>
+
+		<script type="text/x-template" id="twitch-card">
+		<div class="content-card col-xl-3 col-lg-4 col-md-6 col-sm-12">
+			<div class="content" data-action="toggle">
+					<div class="overlay" style="background-image:url(<%=backgroundImage%>)"></div>
+					<div class="overlay-actions">
+						<div class="top-bar">
+							<div class="action" data-action="remove"><img src="assets/icons/remove.svg" width="20px" height="20px"></div>
+							<div class="action" data-action="fav"><img src="assets/icons/fav.svg" width="20px" height="20px"></div>
+						</div>
+						<div class="continue">
+							<img data-action="view" data-channel="<%=channel%>" src="assets/icons/view28.svg" width="100px">
+						</div>
+					</div> 
+					<div class="profile">
+						<div class="icon" style="background-image:url(<%=icon%>);"></div>
+						<div class="status">
+							<h2><%=subtitle%></h2>
+							<h3><%=title%></h3>
+						</div>
+					</div>
+			</div>
+		</div>
+		</script>
+
+		<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
+		<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore.js"></script>
+		<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+		<script type="text/javascript" src="assets/js/content-card.jquery.js"></script>
+		<script type="text/javascript" src="assets/js/main.js"></script>
+
+	</body>
+</html>

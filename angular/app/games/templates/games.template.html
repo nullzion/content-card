@@ -1,0 +1,8 @@
+<ul class="games container">
+	<li ng-repeat="game in games">
+		<a ng-click="setGame(game.name)">
+			<img src="{{game.box.medium}}">
+		</a>
+	</li>
+</ul>
+<div class="close-btn" ng-click="toggleMenu()"><img src="{{assets.close}}" width="20px" height="20px"></div>

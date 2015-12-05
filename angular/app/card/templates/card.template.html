@@ -1,0 +1,18 @@
+<div class="content">
+  <div class="overlay" style="background-image:url({{stream.preview.large}})"></div>
+  <div class="overlay-actions">
+    <div class="top-bar">
+      <div class="action" ng-click="action()" ng-repeat="(actionName, action) in stream.overlayActions"><img src="{{assets[actionName]}}" width="20px" height="20px" /></div>
+    </div>
+    <div class="continue">
+      <img src="{{assets.view}}" ng-click="callWorkerAction('setChannel', stream.channel.name)" width="100px" />
+    </div>
+  </div>
+  <div class="profile">
+    <div class="icon" style="background-image:url({{stream.channel.logo}})"></div>
+    <div class="status">
+      <h2>{{stream.channel.status}}</h2>
+      <h3>{{stream.channel.display_name}}</h3>
+    </div>
+  </div>
+</div>

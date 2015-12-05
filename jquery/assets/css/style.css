@@ -1,0 +1,364 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol,
+ul {
+    list-style: none;
+}
+blockquote,
+q {
+    quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+body {
+    font-family: 'Open Sans';
+}
+header {
+    background-color: #19191F;
+    padding: 5px 0;
+    position: relative;
+    transition: transform 0.5s ease;
+}
+header.visible {
+    transform: translate(0px);
+}
+header .games li {
+    display: inline-block;
+    width: 10%;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+header .games li:hover {
+    transform: translateY(10px);
+}
+header .games li.active {
+    transform: translateY(10px);
+}
+header .games li img {
+    width: 90%;
+    vertical-align: middle;
+}
+header .close-btn {
+    display: none;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+.open-btn {
+    display: none;
+    width: 70px;
+    height: 50px;
+    line-height: 50px;
+    border-radius: 0px 10px 10px 0px;
+    background-color: #FFF;
+    text-align: center;
+    box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.5), 0px 2px 15px 0px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+}
+#stream-holder {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+#stream-holder iframe {
+    margin: 0 auto;
+    display: block;
+}
+.streams {
+    margin-top: 5px;
+}
+.content-card {
+    position: relative;
+    opacity: 0;
+    transition: all 0.5s ease;
+}
+.content-card:after {
+    content: "";
+    display: block;
+    padding-top: 100%;
+}
+.content-card .content {
+    position: absolute;
+    box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.5), 0px 2px 15px 0px rgba(0, 0, 0, 0.3);
+    border: 5px solid #FFF;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: 10px;
+    overflow: hidden;
+}
+.content-card .profile {
+    position: absolute;
+    bottom: 0;
+    height: 30%;
+    width: 100%;
+    background-color: #FFF;
+}
+.content-card.game .profile {
+    height: 20%;
+}
+.content-card .profile .icon {
+    height: 100%;
+    float: left;
+    width: 30%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.content-card .profile .status {
+    float: left;
+    width: 70%;
+    padding: 20px;
+}
+.content-card .status h2 {
+    width: 100%;
+    overflow: hidden;
+    /*text-overflow: ellipsis;
+			white-space: nowrap;
+			overflow: hidden;*/
+    
+    height: 36px;
+    font-family: 'Open Sans';
+    font-size: 18px;
+    margin-bottom: 10px;
+    position: relative;
+}
+.content-card .status h2:after {
+    position: absolute;
+    height: 18px;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 71%, rgba(255, 255, 255, 1) 100%);
+    bottom: 0;
+    right: 0;
+    width: 30%;
+    content: "";
+}
+.content-card.game h2 {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 60%;
+}
+.content-card .status h3 {
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    font-size: 14px;
+    font-family: 'Open Sans';
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+.content-card .status p {
+    font-family: 'Open Sans';
+    font-size: 12px;
+}
+.content-card .status p b {
+    font-weight: 700;
+}
+.content-card .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: filter 0.5s ease, transform 0.5s ease;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 70%;
+}
+.content-card .content:hover .overlay,
+.content-card .content.visible-actions .overlay {
+    filter: blur(5px);
+    transform: scale(1.1);
+}
+.content-card .overlay-actions {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+.content-card .overlay-actions .action {
+    float: right;
+    cursor: pointer;
+    margin: 5px;
+}
+.content-card .overlay-actions .continue img {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.8));
+}
+.content-card:hover .overlay-actions,
+.content-card .content.visible-actions .overlay-actions {
+    opacity: 1;
+}
+#video-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+.video-wrapper {
+    position: relative;
+    padding-top: 56.25%;
+    max-width: 800px;
+    height: 0;
+    overflow: hidden;
+    display: none;
+    margin-top: 15px;
+}
+.video-wrapper iframe {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+@media only screen and (max-width: 768px) {
+    header {
+        position: fixed;
+        top: 0;
+        width: 80%;
+        z-index: 100;
+        height: 100%;
+        transform: translateX(-100%);
+    }
+    header .games li {
+        width: 33%;
+        padding-bottom: 10px;
+    }
+    header .games {
+        margin-top: 40px;
+    }
+    header .close-btn {
+        display: block;
+    }
+    .open-btn {
+        display: block;
+        position: fixed;
+        bottom: 30px;
+        left: 0px;
+        z-index: 99;
+    }
+}
